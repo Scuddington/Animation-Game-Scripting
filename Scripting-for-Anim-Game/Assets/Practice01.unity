@@ -203,6 +203,8 @@ MonoBehaviour:
   jumpSpeed: 15
   jumpCount: 0
   jumpCountMax: 1
+  slideDuration: 10
+  slideTime: 0.01
 --- !u!23 &338999978
 MeshRenderer:
   m_ObjectHideFlags: 0

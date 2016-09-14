@@ -19,16 +19,20 @@ public class CharacterSlide : MonoBehaviour {
             i++;
             yield return new WaitForSeconds(slideTime);
             print("SLIDING, AAHHHHHH!");
+            //move the character controller
         }
     }
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+    {
+        myCC = GetComponent<CharacterController>();
+        StartCoroutine(Slide());
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+	    
 	}
 }
