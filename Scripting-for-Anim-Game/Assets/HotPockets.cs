@@ -13,17 +13,19 @@ public class HotPockets : MonoBehaviour {
 	{
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
-			int loyaltyMeter = Random.Range (1, 3); 
+			int loyaltyMeter = Random.Range (0, 4); 
 
-			if (loyaltyMeter <= neutralScum) 
-			{
-				print ("You Rebel scum.");
-			}
+			//print (loyaltyMeter);
 
-			else if (loyaltyMeter >= neutralScum) 
+			if (loyaltyMeter > neutralScum) 
 			{
 				print ("The Emperor would be proud.");
 			} 
+
+			else if (loyaltyMeter < neutralScum) 
+			{
+				print ("You Rebel scum.");
+			}
 
 			else
 			{
