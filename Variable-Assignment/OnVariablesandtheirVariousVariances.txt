@@ -1,0 +1,1 @@
+﻿Variables are like a box into which you place information that you want to access later. You can specify the kind of variable by the “type”. Common variable types are int, float, and bool. Throughout the rest of the script, you can access the information in the variable “box” by calling for it in functions.
