@@ -1,0 +1,1 @@
+﻿A function is like a box into which you place a piece of code, unlike variables, which just store different data values. You can call functions from other parts of the script, or even from a completely separate script. There are different “types” for functions. “Void” is a common type that doesn’t return any value, whereas “int” returns an integer value.
