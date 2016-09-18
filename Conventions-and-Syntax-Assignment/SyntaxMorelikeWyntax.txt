@@ -1,0 +1,1 @@
+﻿Syntax in coding is much like vocabulary and grammar in any other language. Even knowing all of the vocabulary, if you can’t put it into a grammatically correct sentence, nothing will make sense. Everything you write in a code is a part of its syntax. Variables, functions, brackets, and even line spacing are essential parts of getting a code to function correctly.
