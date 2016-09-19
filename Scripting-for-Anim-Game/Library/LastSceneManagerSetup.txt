@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Functions.unity
+- path: Assets/Scenes/DelegateAgain.unity
   isLoaded: 1
   isActive: 1
