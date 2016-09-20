@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DelegateAgain.unity
+- path: Assets/Scenes/IfStatements.unity
   isLoaded: 1
   isActive: 1
