@@ -1,0 +1,1 @@
+﻿Loops are a way to repeat a line of code while the conditions are met or until the conditions stop being met. You can use (but are not limited to) arrays and if statements to provide conditionals for the loop. There are four different kinds of loops in C#. For, foreach, while, and do-while loops, and each serves a slightly different purpose in a given script.
