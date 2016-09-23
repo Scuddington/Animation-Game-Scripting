@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 
 public class RecycleLevelObject : MonoBehaviour {
 
@@ -23,14 +22,12 @@ public class RecycleLevelObject : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        
+        i = UnityEngine.Random.Range(0, recyblableList.Count - 1);
         newLocation.x = StaticVars.nextSectionPos;
         recyblableList[i].cube.position = newLocation;
         StaticVars.nextSectionPos += StaticVars.distance;
-        print("I'm hit!");
-
-        if (i < recyblableList.Count)
-            i++;
+        if (recyblableList.Count > 0)
+            recyblableList.RemoveAt(i);
     }
 
 }

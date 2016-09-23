@@ -12,9 +12,11 @@ public class Recycler : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        cube = this.GetComponent<Transform>();
+        cube = this.GetComponent<Transform> ();
         if (recycleAction != null && canBeRecycled != false)
-            recycleAction(this);  
+        {
+            recycleAction (this);
+        }
 	}
 
     void OnTriggerEnter()

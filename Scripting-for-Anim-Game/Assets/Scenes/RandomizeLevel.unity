@@ -102,7 +102,7 @@ GameObject:
   - 65: {fileID: 891562277}
   - 23: {fileID: 891562276}
   - 114: {fileID: 891562275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GreenCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - 65: {fileID: 1100178788}
   - 23: {fileID: 1100178787}
   - 114: {fileID: 1100178786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YellowCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - 65: {fileID: 1294645935}
   - 54: {fileID: 1294645937}
   - 114: {fileID: 1294645938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RecycleTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - 65: {fileID: 1385375684}
   - 23: {fileID: 1385375683}
   - 114: {fileID: 1385375687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RedCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - 65: {fileID: 1689815846}
   - 23: {fileID: 1689815845}
   - 114: {fileID: 1689815849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   - 65: {fileID: 1833054813}
   - 23: {fileID: 1833054812}
   - 114: {fileID: 1833054811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OrangeCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - 65: {fileID: 1895784961}
   - 23: {fileID: 1895784960}
   - 114: {fileID: 1895784964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   - 65: {fileID: 1921312252}
   - 23: {fileID: 1921312251}
   - 114: {fileID: 1921312250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PurpleCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
