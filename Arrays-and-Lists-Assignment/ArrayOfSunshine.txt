@@ -1,0 +1,4 @@
+﻿Instead of a variable which stores just one value, you can write an array that contains many values or objects of the same type. Using an array, you could keep track of all of the enemies in a scene or use it as a container for all of the player weapons being held.
+
+
+Lists are similar to arrays, but instead of having to manually write in how many elements are in the array, a list will update elements according to the scene. Like in the script we wrote in class, where the level cubes are added to the list upon pressing play, and then more are added as they collide with the trigger.
