@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NewLevelRecycler.unity
+- path: Assets/Scenes/PlayerRespawn.unity
   isLoaded: 1
   isActive: 1
