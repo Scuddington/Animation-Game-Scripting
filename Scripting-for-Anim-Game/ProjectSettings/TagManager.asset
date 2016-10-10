@@ -17,8 +17,8 @@ TagManager:
   - Level
   - Ground
   - Player
-  - 
-  - 
+  - EnemyToGround
+  - EnemyToPlayer
   - 
   - 
   - 
