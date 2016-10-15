@@ -8,14 +8,12 @@ public class AmmoManager : MonoBehaviour {
 	public Slider ammoSlider; 
 	AmmoManager ammoManager;
 
-
 	Text text;
 	
 	void Awake()
 	{
 		//text reference
 		text = GetComponent <Text> ();
-		
 		//reset score
 		ammo = 0;
 	}

@@ -5,32 +5,25 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
 	//health variables
-	public int startingHealth = 100; 
-	public int currentAmmo;
+	int startingHealth = 100; 
+	int currentAmmo;
 	//ammo variables
-	public int startingAmmo = 0; 
-	public int currentHealth;
+	int startingAmmo = 0; 
+	int currentHealth;
 	//score variables
-	public int startingScore = 0;
-	public int currentScore;
+	int startingScore = 0;
+	int currentScore;
 
-	public Slider healthSlider;       //Reference to the UI's health bar
+	public Slider healthSlider;  
 	public Slider ammoSlider;
 	public Image damageImage;
-	
-	
 	public GameObject gameOver;
 	public GameObject youWin;
 	
 	PlayerMove02 playerMove;
 
-	//enemy stuff to be disabled
-
-
 	public float flashSpeed = 5f;
-
 	public Color flashColor = new Color (1f, 0f, 0f, 0.1f);
-		
 	bool isDead;
 	bool damaged;
 
@@ -38,11 +31,8 @@ public class PlayerHealth : MonoBehaviour {
 	void Awake ()
 	{
 		playerMove = GetComponent<PlayerMove02>();
-
 		currentAmmo = startingAmmo;
-
 		currentHealth = startingHealth;
-
 		currentScore = startingScore;
 	}
 
