@@ -6,8 +6,8 @@ public class PlayerShoot : MonoBehaviour
 {
 	public Rigidbody projectile;
 	public float bulletSpeed = 15f;
-	public int addBullet = 1;
-	public int ammoValue = 1;
+	int addBullet = 1;
+	int ammoValue = 1;
 
 	public GameObject player;
 	
@@ -23,6 +23,7 @@ public class PlayerShoot : MonoBehaviour
 	{
 		if (Input.GetKeyDown (KeyCode.Space) && AmmoManager.ammo > 0)
 		{
+			print ("Shoot HAAAAA");
 			Rigidbody instantiateProjectile = Instantiate (projectile, transform.position, transform.rotation)as Rigidbody;
 			
 			//instantiate bullet from PreFabs 
