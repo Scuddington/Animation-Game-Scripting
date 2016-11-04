@@ -7,15 +7,17 @@ public class CameraFollow : MonoBehaviour {
     private Vector3 cameraPos;
 
 	// Use this for initialization
-	void Start ()
-    {
-        //MoveCamera();
-	}
 	
 	IEnumerator MoveCamera()
     {
+        yield return new WaitForSeconds(1);
         cameraPos.y = cameraSpeed * Time.deltaTime;
         transform.Translate(cameraPos);
         print("Bwah");
+    }
+
+    void Start()
+    {
+        StartCoroutine(MoveCamera());
     }
 }
