@@ -4,6 +4,7 @@ using System.Collections;
 public class MeleeHit : MonoBehaviour {
 
     public GameObject impactParticle;
+    //public GameObject Player;
 
 //	private bool hasCollided = false;
 
@@ -18,4 +19,18 @@ public class MeleeHit : MonoBehaviour {
 //			Destroy (impactParticle);
 //		}
     }
+
+   
+    //Cheaty Script for Prototype
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    //foreach (ContactPoint contact in collision.contacts)
+    //    Instantiate(impactParticle, Player.transform.position, Quaternion.identity);
+
+    //    //		if (!hasCollided)
+    //    //		{
+    //    //			hasCollided = true;
+    //    //			Destroy (impactParticle);
+    //    //		}
+    //}
 }
