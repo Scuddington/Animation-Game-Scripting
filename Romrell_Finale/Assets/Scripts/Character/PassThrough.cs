@@ -4,13 +4,13 @@ using System.Collections;
 public class PassThrough : MonoBehaviour {
 
     public GameObject wallColor;
-    public GameObject playerCol;
+    public GameObject playerColor;
     private Material Green;
 
     void Start()
     {
         // Green = GreenMat.GetComponent<Renderer>().material;
-        playerColor = playerColor.GetComponent<Renderer>().material;
+        //playerColor = playerColor.GetComponent<Renderer>().material;
     }
 
     void OnCollisionEnter(Collision Col)

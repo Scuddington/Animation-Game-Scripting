@@ -15,13 +15,13 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetAxis("Horizontal") != 0)
-        {
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        { 
             StartCoroutine(Move());
         }
 	}
 
-    IEnumerator Move ()
+    public IEnumerator Move ()
     {
         //playerPos.x = speed * Input.GetAxis("Horizontal");
         playerPos = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
