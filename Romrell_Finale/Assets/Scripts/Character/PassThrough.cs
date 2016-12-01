@@ -3,30 +3,27 @@ using System.Collections;
 
 public class PassThrough : MonoBehaviour {
 
-    public GameObject wallColor;
-    public GameObject playerColor;
-    private Material Green;
 
-    void Start()
+    void OnTriggerEnter(Collider col)
     {
-        // Green = GreenMat.GetComponent<Renderer>().material;
-        //playerColor = playerColor.GetComponent<Renderer>().material;
+        if (col.gameObject.GetComponent<Renderer>().material.color == gameObject.GetComponent<Renderer>().material.color)
+        {
+            Physics.IgnoreLayerCollision(8, 13, true);
+            print("go through");
+            StartCoroutine(TurnLayerBackOn());
+        }
+
+        else if (col.gameObject.GetComponent<Renderer>().material.color != gameObject.GetComponent<Renderer>().material.color)
+        {
+            Physics.IgnoreLayerCollision(8, 13, false);
+            print("no through");
+        }
     }
 
-    void OnCollisionEnter(Collision Col)
+    public IEnumerator TurnLayerBackOn ()
     {
-        print("Collision");
-        //if (Wall.GetComponent<Renderer>().material = Green)
-        //{
-        //    print("GREEEEEN");
-        //}
-        if (wallColor.GetComponent<Renderer>().material = playerColor.GetComponent<Renderer>().material)
-        {
-            print("GREEEEEN");
-        }
-        //switch ()
-        //{
-        //    case Green:
-        //}
+        yield return new WaitForSeconds(3);
+        Physics.IgnoreLayerCollision(8, 13, false);
     }
 }
+
