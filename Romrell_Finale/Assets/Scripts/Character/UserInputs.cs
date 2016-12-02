@@ -3,7 +3,6 @@ using System;
 
 public class UserInputs : MonoBehaviour
 {
-    //public static Action<Input> UserInput;
     PlayerMove playerMove;
     public GameObject player;
 
@@ -17,7 +16,6 @@ public class UserInputs : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            print("GOOOOO");
             playerMove.StartCoroutine(playerMove.Move()); 
         }
     }

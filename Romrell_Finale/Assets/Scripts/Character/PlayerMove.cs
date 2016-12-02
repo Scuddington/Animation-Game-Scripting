@@ -13,15 +13,6 @@ public class PlayerMove : MonoBehaviour {
         playerCC = GetComponent<CharacterController>();
     }
 
-    //OLD THINGY
-    //void Update()
-    //{
-    //    if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-    //    {
-    //        StartCoroutine(Move());
-    //    }
-    //}
-
     //movement Coroutine being called in UserInputs
     public IEnumerator Move ()
     {
@@ -30,4 +21,13 @@ public class PlayerMove : MonoBehaviour {
         playerCC.Move(playerPos * speed * Time.deltaTime);
         yield return null;
     }
+
+    //OLD THINGY
+    //void Update()
+    //{
+    //    if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+    //    {
+    //        StartCoroutine(Move());
+    //    }
+    //}
 }

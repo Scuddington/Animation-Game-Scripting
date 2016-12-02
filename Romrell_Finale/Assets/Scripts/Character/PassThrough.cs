@@ -22,8 +22,9 @@ public class PassThrough : MonoBehaviour {
 
     public IEnumerator TurnLayerBackOn ()
     {
-        yield return new WaitForSeconds(3);
-        Physics.IgnoreLayerCollision(8, 13, false);
+        yield return new WaitForSeconds(1.5f);
+        print("Cannot pass through now");
+        Physics.IgnoreLayerCollision(8, 13, false);        
     }
 }
 
