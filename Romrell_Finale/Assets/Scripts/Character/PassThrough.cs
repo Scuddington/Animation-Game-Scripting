@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class PassThrough : MonoBehaviour {
-
-
+   
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.GetComponent<Renderer>().material.color == gameObject.GetComponent<Renderer>().material.color)

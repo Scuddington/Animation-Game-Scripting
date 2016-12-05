@@ -6,11 +6,13 @@ public class CamFollow : MonoBehaviour {
     public Transform player;
     public bool playerMoving = false;
 
+    //Camera follows without update by using coroutine
     void Start ()
     {
         playerMoving = true;
         StartCoroutine(CameraFollow());
     }
+
 
 	IEnumerator CameraFollow ()
     {

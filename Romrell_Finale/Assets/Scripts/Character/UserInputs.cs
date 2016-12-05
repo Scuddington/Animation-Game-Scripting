@@ -18,6 +18,5 @@ public class UserInputs : MonoBehaviour
         {
             playerMove.StartCoroutine(playerMove.Move()); 
         }
-    }
-    
+    }    
 }
