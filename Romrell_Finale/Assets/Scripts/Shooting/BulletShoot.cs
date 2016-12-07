@@ -12,7 +12,9 @@ public class BulletShoot : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	public IEnumerator Shoot () {
+        print("SHOOT HER");
+
+        yield return null;
 	}
 }
