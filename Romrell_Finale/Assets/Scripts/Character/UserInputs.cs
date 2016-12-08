@@ -4,14 +4,20 @@ using System;
 public class UserInputs : MonoBehaviour
 {
     PlayerMove playerMove;
-    BulletShoot bulletShoot;
+    BulletControl bulletControl;
+    //Bullets bulletShoot;
     public GameObject player;
+   // public GameObject bullet;
 
     //Possibly the most inelegant solution
     void Start()
     {
+        //To get coroutines in player
         playerMove = player.GetComponent<PlayerMove>();
-        bulletShoot = player.GetComponent<BulletShoot>();
+        bulletControl = player.GetComponent<BulletControl>();
+
+        //To get coroutine in bullets to move them
+        //bulletShoot = bullet.GetComponent<Bullets>();  
     }
 
     void Update()
@@ -23,7 +29,9 @@ public class UserInputs : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            bulletShoot.StartCoroutine(bulletShoot.Shoot());
+            bulletControl.StartCoroutine(bulletControl.MoveBulletToSpawn());
+            bulletControl.StartCoroutine(bulletControl.Shoot());
+            //bulletShoot.StartCoroutine(bulletShoot.Shoot());
         }
     }    
 }
