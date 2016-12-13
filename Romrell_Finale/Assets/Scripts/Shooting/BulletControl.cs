@@ -17,6 +17,8 @@ public class BulletControl : MonoBehaviour {
     {
         Bullets.SendBullet += BulletHandler;
         canShoot = true;
+
+        
         //BulletSpawn.sendBulletSpawn += BulletSpawnHandler;
     }
 
@@ -42,6 +44,11 @@ public class BulletControl : MonoBehaviour {
             bulletNum = 0;
         }
 
+        foreach (Transform bul in bullets)
+        {
+            print("You have " + bul + "bullets");
+        }
+
         //yield return new WaitForSeconds(2);
 
         //bullets[bulletNum].position = bulletPos * bulletSpeed * Time.deltaTime;
@@ -57,10 +64,11 @@ public class BulletControl : MonoBehaviour {
         while (canShoot)
         {
             yield return new WaitForSeconds(0.1f);
-            print("SHOOT HER! SHOOOOOOOOOOOOOT HERRRRRRR!");
+           
 
 
             bullets[bulletNum].position = bulletSpawn.position * bulletSpeed * Time.deltaTime;
+            print("SHOOT HER! SHOOOOOOOOOOOOOT HERRRRRRR!");
             //transform.Translate(bulletPos);
             yield return null;
         }
