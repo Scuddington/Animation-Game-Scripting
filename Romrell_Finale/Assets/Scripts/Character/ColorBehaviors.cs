@@ -11,6 +11,9 @@ public class ColorBehaviors : MonoBehaviour {
     public GameObject Red;
     public GameObject Purple;
     public int ColorBlocks;
+    //public Transform PurpleTeleport;
+    public bool canTeleport;
+    public bool canPickupPoints;
 
     //public static Action<Transform> SendPlayer;
     // Use this for initialization
@@ -20,12 +23,12 @@ public class ColorBehaviors : MonoBehaviour {
     //        SendPlayer(transform);
     //    }
     //}
-
-    
+         
 
 
     // Update is called once per frame
-    void OnTriggerEnter () {
+    void OnTriggerStay()
+    {
 
         StartCoroutine(CaseChange());
         switch (ColorBlocks)
@@ -37,23 +40,27 @@ public class ColorBehaviors : MonoBehaviour {
                     Physics.IgnoreLayerCollision(8, 13, true);
                     StartCoroutine(TurnLayerBackOn());
                 }
-                else if (gameObject.GetComponent<Renderer>().material.color != gameObject.GetComponent<Renderer>().material.color)
-                {
-                    Physics.IgnoreLayerCollision(8, 13, false);
-                }
+                //else if (gameObject.GetComponent<Renderer>().material.color != gameObject.GetComponent<Renderer>().material.color)
+                //{
+                //    Physics.IgnoreLayerCollision(8, 13, false);
+                //}
 
                 break;
 
             case 2:
                 if (player.GetComponent<Renderer>().material.color == Red.GetComponent<Renderer>().material.color)
                 {
-                    print("You are Red");
+                    print("You are red, and can now pick up red spheres for points");
+                    canPickupPoints = true;
                 }
                 break;
 
             case 1:
                 if (player.GetComponent<Renderer>().material.color == Purple.GetComponent<Renderer>().material.color)
-                    print("You are Purple");
+                {
+                    print("You are purple, and can now teleport from one purple wall to another");
+                    canTeleport = true;
+                }
                 break;
 
             default:
@@ -73,7 +80,18 @@ public class ColorBehaviors : MonoBehaviour {
 
     public IEnumerator CaseChange()
     {
-        ColorBlocks = 1;
+        if (player.GetComponent<Renderer>().material.color == Purple.GetComponent<Renderer>().material.color)
+        {
+            ColorBlocks = 1;
+        }
+        if (player.GetComponent<Renderer>().material.color == Red.GetComponent<Renderer>().material.color)
+        {
+            ColorBlocks = 2;
+        }
+        if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
+        {
+            ColorBlocks = 3;
+        }
         yield return null;
     }
 }

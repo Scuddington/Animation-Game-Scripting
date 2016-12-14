@@ -6,16 +6,19 @@ public class PickupPoints: MonoBehaviour
 {
 
     public GameObject player;
+    public GameObject ColorManager;
+    ColorBehaviors colorPickup;
     private int score = 0;
 
     void Start()
     {
+        colorPickup = ColorManager.GetComponent<ColorBehaviors>();
         print(score);
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter()
     {
-        if (col.GetComponent<Renderer>().material.color == gameObject.GetComponent<Renderer>().material.color)
+        if (colorPickup.canPickupPoints)
         {
             print("Ten points to Gryffindor");
 
