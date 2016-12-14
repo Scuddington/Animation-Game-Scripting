@@ -16,7 +16,6 @@ public class PlayerMove : MonoBehaviour {
     //movement Coroutine being called in UserInputs
     public IEnumerator Move ()
     {
-        print("move coroutine running");
         playerPos = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         playerCC.Move(playerPos * speed * Time.deltaTime);
         yield return null;

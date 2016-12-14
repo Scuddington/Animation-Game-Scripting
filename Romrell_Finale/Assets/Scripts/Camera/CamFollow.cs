@@ -19,7 +19,6 @@ public class CamFollow : MonoBehaviour {
         while (playerMoving)
         {
             transform.position = new Vector3(player.position.x, player.position.y + 14, player.position.z);
-            print("camera moving");
             yield return null;
         }
 	}

@@ -5,7 +5,7 @@ public class UserInputs : MonoBehaviour
 {
     PlayerMove playerMove;
     BulletControl bulletControl;
-    //Bullets bulletShoot;
+    Bullets bulletShoot;
     public GameObject player;
    // public GameObject bullet;
 
@@ -30,7 +30,7 @@ public class UserInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             bulletControl.StartCoroutine(bulletControl.MoveBulletToSpawn());
-            bulletControl.StartCoroutine(bulletControl.Shoot());
+            //bulletControl.StartCoroutine(bulletControl.Shoot());
             //bulletShoot.StartCoroutine(bulletShoot.Shoot());
         }
     }    

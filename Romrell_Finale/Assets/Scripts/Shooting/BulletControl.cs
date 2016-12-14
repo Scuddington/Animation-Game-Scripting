@@ -6,6 +6,9 @@ public class BulletControl : MonoBehaviour {
 
     public List<Transform> bullets;
     public Transform bulletSpawn;
+    public List<Rigidbody> bullet;
+
+    private Vector3 bulletPos;
 
     //private Vector3 bulletPos;
     public float bulletSpeed = 5;
@@ -15,10 +18,12 @@ public class BulletControl : MonoBehaviour {
     
     void Start()
     {
+
         Bullets.SendBullet += BulletHandler;
+
         canShoot = true;
 
-        
+      
         //BulletSpawn.sendBulletSpawn += BulletSpawnHandler;
     }
 
@@ -33,7 +38,7 @@ public class BulletControl : MonoBehaviour {
     {
 
         bullets[bulletNum].position = bulletSpawn.position;
-
+        //bulletPos = bulletSpawn.position;
         if (bulletNum < bullets.Count - 1)
         {
             bulletNum++;
@@ -51,7 +56,7 @@ public class BulletControl : MonoBehaviour {
 
         //yield return new WaitForSeconds(2);
 
-        //bullets[bulletNum].position = bulletPos * bulletSpeed * Time.deltaTime;
+        //bullet[bulletNum].velocity = bulletPos * bulletSpeed * Time.deltaTime;
         //transform.Translate(bulletPos);
         //print("SHOOT HER! SHOOOOOOOOOOOOOT HERRRRRRR!");
 
@@ -59,18 +64,19 @@ public class BulletControl : MonoBehaviour {
         yield return null;
     }
 
-    public IEnumerator Shoot()
-    {
-        while (canShoot)
-        {
-            yield return new WaitForSeconds(0.1f);
-           
+    //public IEnumerator Shoot()
+    //{
+    //    while (canShoot)
+    //    {
+
+    //        yield return new WaitForSeconds(0.1f);
 
 
-            bullets[bulletNum].position = bulletSpawn.position * bulletSpeed * Time.deltaTime;
-            print("SHOOT HER! SHOOOOOOOOOOOOOT HERRRRRRR!");
-            //transform.Translate(bulletPos);
-            yield return null;
-        }
-    }
+
+    //        bullet[bulletNum].velocity = bulletPos * bulletSpeed * Time.deltaTime;
+    //        print("SHOOT HER! SHOOOOOOOOOOOOOT HERRRRRRR!");
+    //        //transform.Translate(bulletPos);
+    //        yield return null;
+    //    }
+    //}
 }
