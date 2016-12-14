@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/PlayerRespawn.unity
+- path: Assets/Scenes/Grounding.unity
   isLoaded: 1
   isActive: 1
