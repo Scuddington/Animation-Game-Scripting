@@ -19,7 +19,7 @@ public class PickupPoints: MonoBehaviour
         {
             //delegate to add score from EventManager
             Action<int> value = EventManager.addScore;
-            value(50);
+            value(10);
 
             gameObject.SetActive(false);         
         }

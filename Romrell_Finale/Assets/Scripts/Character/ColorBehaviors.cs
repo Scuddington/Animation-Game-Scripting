@@ -17,32 +17,25 @@ public class ColorBehaviors : MonoBehaviour {
 
     public string color;
 
-    //void Start()
-    //{
-    //    playerMat = player.GetComponent<Renderer>().material.color;
-    //}
-
-    // Update is called once per frame
     void OnTriggerEnter()
     {
+        //every time a trigger is...triggered, the coroutine starts to check which case it should be using
         StartCoroutine(CaseChange());
         switch (ColorBlocks)
         {
             case 3:
+                //If player is green, player can pass through green walls
                 if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
                 {
-                    canTeleport = false;
                     print("You are green, and can pass through green walls");
+                    //turns off layer collision between Player and ThroughWalls layers
                     Physics.IgnoreLayerCollision(8, 13, true);
                     StartCoroutine(TurnLayerBackOn());
                 }
-                //else if (gameObject.GetComponent<Renderer>().material.color != gameObject.GetComponent<Renderer>().material.color)
-                //{
-                //    Physics.IgnoreLayerCollision(8, 13, false);
-                //}
                 break;
 
             case 2:
+                //if player is Red, player can pick up red points
                 if (player.GetComponent<Renderer>().material.color == Red.GetComponent<Renderer>().material.color)
                 {
                     print("You are red, and can now pick up red spheres for points");
@@ -52,6 +45,7 @@ public class ColorBehaviors : MonoBehaviour {
                 break;
 
             case 1:
+                //if player is Purple, can teleport through purple walls
                 if (player.GetComponent<Renderer>().material.color == Purple.GetComponent<Renderer>().material.color)
                 { 
                     canTeleport = true;
@@ -61,15 +55,15 @@ public class ColorBehaviors : MonoBehaviour {
                 break;
 
             default:
-                print("No colors");
                 break;
         }	
 	}
 
+    //Coroutines
+    //waits and then turns the layer collision back on
     public IEnumerator TurnLayerBackOn()
     {
         yield return new WaitForSeconds(1.5f);
-        print("Layer Back on");
         Physics.IgnoreLayerCollision(8, 13, false);
     }
 
@@ -78,16 +72,16 @@ public class ColorBehaviors : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.001f);
         canTeleport = false;
-        print("Teleport off");
     }
 
+    //points become unable to be picked up
     IEnumerator PickupPointsOff()
     {
         yield return new WaitForSeconds(0.001f);
         canPickupPoints = false;
-        print("No points for you");
     }
 
+    //Enumerator to change the case 
     public IEnumerator CaseChange()
     {
         if (player.GetComponent<Renderer>().material.color == Purple.GetComponent<Renderer>().material.color)
