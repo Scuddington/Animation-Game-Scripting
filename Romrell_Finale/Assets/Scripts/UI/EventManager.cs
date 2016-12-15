@@ -13,14 +13,11 @@ public class EventManager : MonoBehaviour {
 
     static Text scoreText;
 
-    //private static bool yes = true;
-
     void Awake()
     {
         scoreText = GetComponent<Text>();
         currentScore = 0;
         scoreText.text = "Score: " + currentScore + "/100";
-        //yes = true;
     }
 
     public static void addScore(int score)
@@ -41,7 +38,7 @@ public class EventManager : MonoBehaviour {
                 print("Glass half full or half empty? You have " + currentScore + " points");
                 break;
             case (100):
-                print("You are winner! You have 100 points!");
+                print("You have 100 points! Reach the end!");
                 break;
             default:
                 break;

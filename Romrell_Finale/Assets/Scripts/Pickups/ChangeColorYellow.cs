@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ChangeColorandShape : PickupColor {
+public class ChangeColorYellow : PickupColor {
 
     //no variables or gameobjects declared because they are inheriting from PickupColor.
     //Even the OnTriggerEnter in PickupColor is being used in this script

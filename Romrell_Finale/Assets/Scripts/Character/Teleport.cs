@@ -18,7 +18,7 @@ public class Teleport : MonoBehaviour {
     {
         colorTeleport = ColorManager.GetComponent<ColorBehaviors>();
         colorTeleport.canTeleport = false;
-    //accessing the SendPlayer Action
+        //accessing the SendPlayer Action
         SendPlayer.SendPlayerTo += PlayerHandler;
     }
 
@@ -34,14 +34,6 @@ public class Teleport : MonoBehaviour {
         if (colorTeleport.canTeleport)
         {
             players[playerNum].position = PurpleTeleport.position;
-            //StartCoroutine(TeleportOff());
         }
     }
-
-    ////turns off the ability to teleport
-    //IEnumerator TeleportOff()
-    //{
-    //    yield return new WaitForSeconds(0.001f);
-    //    colorTeleport.canTeleport = false;
-    //}
 }

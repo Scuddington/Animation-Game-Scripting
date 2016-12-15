@@ -9,13 +9,17 @@ public class ColorBehaviors : MonoBehaviour {
     public GameObject Green;
     public GameObject Red;
     public GameObject Purple;
+    public GameObject Yellow;
 
     private static int ColorBlocks;
 
     public bool canTeleport;
     public bool canPickupPoints;
 
-    public string color;
+    void Start()
+    {
+        ColorBlocks = 4;
+    }
 
     void OnTriggerEnter()
     {
@@ -23,6 +27,15 @@ public class ColorBehaviors : MonoBehaviour {
         StartCoroutine(CaseChange());
         switch (ColorBlocks)
         {
+            case 4:
+                //If player is green, player can pass through green walls
+                if (player.GetComponent<Renderer>().material.color == Yellow.GetComponent<Renderer>().material.color)
+                {
+                    print("Go for the gold!");
+                    //turns off layer collision between Player and YellowWall layer
+                    Physics.IgnoreLayerCollision(8, 15, true);
+                }
+                break;
             case 3:
                 //If player is green, player can pass through green walls
                 if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
@@ -72,7 +85,6 @@ public class ColorBehaviors : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         canTeleport = false;
-        print("no teleport");
     }
 
     //points become unable to be picked up
