@@ -1,36 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class PickupPoints: MonoBehaviour
 {
-
+    public int addScore = 1;
+    public int scoreValue = 1;
     public GameObject player;
-    public GameObject ColorManager;
+    public GameObject EventManage;
     ColorBehaviors colorPickup;
-    private int score = 0;
 
     void Start()
     {
-        colorPickup = ColorManager.GetComponent<ColorBehaviors>();
-        print(score);
+        colorPickup = player.GetComponent<ColorBehaviors>();
     }
 
     void OnTriggerEnter()
     {
         if (colorPickup.canPickupPoints)
         {
-            print("Ten points to Gryffindor");
+            //delegate to add score from EventManager
+            Action<int> value = EventManager.addScore;
+            value(50);
 
-            score += 1;
-            print(score);
-            //GetComponent<Collider>().enabled = false;
-            GetComponent<MeshRenderer>().enabled = false;
-            //gameObject.SetActive(false);
-        }
-        if (score > 2)
-        {
-            print("Winner winner");
+            gameObject.SetActive(false);         
         }
     }
 }

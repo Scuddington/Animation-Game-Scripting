@@ -30,8 +30,6 @@ public class UserInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             bulletControl.StartCoroutine(bulletControl.MoveBulletToSpawn());
-            //bulletControl.StartCoroutine(bulletControl.Shoot());
-            //bulletShoot.StartCoroutine(bulletShoot.Shoot());
         }
     }    
 }

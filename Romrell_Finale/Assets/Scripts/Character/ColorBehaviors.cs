@@ -5,38 +5,33 @@ using System;
 
 public class ColorBehaviors : MonoBehaviour {
 
-    // public List<Material> ColorBlocks;
     public GameObject player;
     public GameObject Green;
     public GameObject Red;
     public GameObject Purple;
-    public int ColorBlocks;
-    //public Transform PurpleTeleport;
+
+    private static int ColorBlocks;
+
     public bool canTeleport;
     public bool canPickupPoints;
 
-    //public static Action<Transform> SendPlayer;
-    // Use this for initialization
-    //void Start () {
-    //    if (SendPlayer != null)
-    //    {
-    //        SendPlayer(transform);
-    //    }
-    //}
-         
+    public string color;
 
+    //void Start()
+    //{
+    //    playerMat = player.GetComponent<Renderer>().material.color;
+    //}
 
     // Update is called once per frame
-    void OnTriggerStay()
+    void OnTriggerEnter()
     {
-
         StartCoroutine(CaseChange());
         switch (ColorBlocks)
         {
             case 3:
                 if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
                 {
-                    print("You are Green");
+                    print("You are green, and can pass through green walls");
                     Physics.IgnoreLayerCollision(8, 13, true);
                     StartCoroutine(TurnLayerBackOn());
                 }
@@ -44,7 +39,6 @@ public class ColorBehaviors : MonoBehaviour {
                 //{
                 //    Physics.IgnoreLayerCollision(8, 13, false);
                 //}
-
                 break;
 
             case 2:
@@ -57,24 +51,22 @@ public class ColorBehaviors : MonoBehaviour {
 
             case 1:
                 if (player.GetComponent<Renderer>().material.color == Purple.GetComponent<Renderer>().material.color)
-                {
-                    print("You are purple, and can now teleport from one purple wall to another");
+                { 
                     canTeleport = true;
+                    print("You are purple, and can now teleport from one purple wall to another");
                 }
                 break;
 
             default:
                 print("No colors");
                 break;
-
-        }
-	
+        }	
 	}
 
     public IEnumerator TurnLayerBackOn()
     {
         yield return new WaitForSeconds(1.5f);
-        print("Uhhhh");
+        print("Layer Back on");
         Physics.IgnoreLayerCollision(8, 13, false);
     }
 
@@ -88,10 +80,11 @@ public class ColorBehaviors : MonoBehaviour {
         {
             ColorBlocks = 2;
         }
-        if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
+        else if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
         {
             ColorBlocks = 3;
         }
+
         yield return null;
     }
 }

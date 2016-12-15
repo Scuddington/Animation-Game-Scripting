@@ -1,26 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class Teleport : MonoBehaviour {
 
     public Transform player;
-    public GameObject ColorManager;
     public Transform PurpleTeleport;
+    public GameObject ColorManager;
+    public List<Transform> players;
+
     ColorBehaviors colorTeleport;
+
+    private int playerNum;
 
     void Start()
     {
         colorTeleport = ColorManager.GetComponent<ColorBehaviors>();
+        colorTeleport.canTeleport = false;
+    //accessing the SendPlayer Action
+        SendPlayer.SendPlayerTo += PlayerHandler;
     }
-    void OnTriggerEnter()
+
+    //Add player to Transform list
+    void PlayerHandler (Transform _p)
     {
-        
+        players.Add(_p);
+    }
+
+    //Teleport player to transform position using Actions
+    void OnTriggerEnter()
+    {        
         if (colorTeleport.canTeleport)
         {
-            print("Teleport");
-            player.position = PurpleTeleport.position;
+            players[playerNum].position = PurpleTeleport.position;
+            StartCoroutine(TeleportOff());
         }
+    }
 
+    //turns off the ability to teleport
+    IEnumerator TeleportOff()
+    {
+        yield return new WaitForSeconds(0.001f);
+        colorTeleport.canTeleport = false;
     }
 }
