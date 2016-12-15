@@ -70,8 +70,9 @@ public class ColorBehaviors : MonoBehaviour {
     //turns off the ability to teleport
     IEnumerator TeleportOff()
     {
-        yield return new WaitForSeconds(0.001f);
+        yield return new WaitForSeconds(1f);
         canTeleport = false;
+        print("no teleport");
     }
 
     //points become unable to be picked up

@@ -6,6 +6,7 @@ public class InterfaceExample : PickupColor {
     //overriding the Interface of PickupColor while still inheriting Monobehavior OnTriggerEnter from PickupColor
 	void OnTriggerEnter()
     {
-        print("Can't change to my color! I'm overriding the Interface of PickupColor!");
+        print("Psych! I'm a decoy.");
+        gameObject.SetActive(false);
     }
 }
