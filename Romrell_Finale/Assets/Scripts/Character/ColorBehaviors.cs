@@ -31,6 +31,7 @@ public class ColorBehaviors : MonoBehaviour {
             case 3:
                 if (player.GetComponent<Renderer>().material.color == Green.GetComponent<Renderer>().material.color)
                 {
+                    canTeleport = false;
                     print("You are green, and can pass through green walls");
                     Physics.IgnoreLayerCollision(8, 13, true);
                     StartCoroutine(TurnLayerBackOn());
@@ -46,6 +47,7 @@ public class ColorBehaviors : MonoBehaviour {
                 {
                     print("You are red, and can now pick up red spheres for points");
                     canPickupPoints = true;
+                    StartCoroutine(PickupPointsOff());
                 }
                 break;
 
@@ -54,6 +56,7 @@ public class ColorBehaviors : MonoBehaviour {
                 { 
                     canTeleport = true;
                     print("You are purple, and can now teleport from one purple wall to another");
+                    StartCoroutine(TeleportOff());
                 }
                 break;
 
@@ -68,6 +71,21 @@ public class ColorBehaviors : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
         print("Layer Back on");
         Physics.IgnoreLayerCollision(8, 13, false);
+    }
+
+    //turns off the ability to teleport
+    IEnumerator TeleportOff()
+    {
+        yield return new WaitForSeconds(0.001f);
+        canTeleport = false;
+        print("Teleport off");
+    }
+
+    IEnumerator PickupPointsOff()
+    {
+        yield return new WaitForSeconds(0.001f);
+        canPickupPoints = false;
+        print("No points for you");
     }
 
     public IEnumerator CaseChange()

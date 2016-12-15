@@ -27,4 +27,20 @@ public class EventManager : MonoBehaviour {
         if (currentScore >= 100)
             print ("You win!");
     }
+    //void CheckPoints ()
+    //{
+    //    int checkInt = currentScore;
+    //    switch (checkInt)
+    //    {
+    //        case 0:
+    //            print("You have 10 points");
+    //            break;
+    //        case (currentScore):
+    //            break;
+
+
+    //        default:
+    //            break;
+    //    }
+    //}
 }

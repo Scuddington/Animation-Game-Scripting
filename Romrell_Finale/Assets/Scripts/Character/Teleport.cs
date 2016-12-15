@@ -34,14 +34,14 @@ public class Teleport : MonoBehaviour {
         if (colorTeleport.canTeleport)
         {
             players[playerNum].position = PurpleTeleport.position;
-            StartCoroutine(TeleportOff());
+            //StartCoroutine(TeleportOff());
         }
     }
 
-    //turns off the ability to teleport
-    IEnumerator TeleportOff()
-    {
-        yield return new WaitForSeconds(0.001f);
-        colorTeleport.canTeleport = false;
-    }
+    ////turns off the ability to teleport
+    //IEnumerator TeleportOff()
+    //{
+    //    yield return new WaitForSeconds(0.001f);
+    //    colorTeleport.canTeleport = false;
+    //}
 }

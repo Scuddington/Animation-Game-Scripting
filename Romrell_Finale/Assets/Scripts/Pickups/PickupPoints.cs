@@ -4,11 +4,8 @@ using System.Collections.Generic;
 using System;
 
 public class PickupPoints: MonoBehaviour
-{
-    public int addScore = 1;
-    public int scoreValue = 1;
+{   
     public GameObject player;
-    public GameObject EventManage;
     ColorBehaviors colorPickup;
 
     void Start()
