@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 
 public class Coroutines : MonoBehaviour {
@@ -11,13 +12,16 @@ public class Coroutines : MonoBehaviour {
     public GameObject YellowSphere;
     private bool RedSphereOn = false;
 
+
     void Start()
     {
         RedSphere.SetActive(false);
         playerCC = gameObject.GetComponent<CharacterController>();
     }
 
-	void Update ()
+    
+
+    void Update ()
     {
 	    if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
@@ -29,6 +33,8 @@ public class Coroutines : MonoBehaviour {
     {
         StartCoroutine(InTrigger());
 
+        
+
         if (RedSphereOn)
         {
             StartCoroutine(PickupPoint());
@@ -38,9 +44,21 @@ public class Coroutines : MonoBehaviour {
     //Sets YellowSphere to inactive, waits for 3 seconds, then turns on the RedSphere object and bool turns to true
     IEnumerator InTrigger()
     {
+        //ACTION 1 
+        Action<int> scoreVal = PointDelegates.scoreAdd;
+        scoreVal(5);
+        //End of ACTION 1
+
         print("Collided, wait for the red sphere");
         YellowSphere.SetActive(false);
         yield return new WaitForSeconds(3);
+
+        //ACTION 2
+        Action<int> scoreTakeVal = PointDelegates.scoreTake;
+        scoreTakeVal(5);
+        print("No points for you. Try the red one.");
+        //End of ACTION 2
+
         RedSphere.SetActive(true);
         RedSphereOn = true;
     }
@@ -56,8 +74,9 @@ public class Coroutines : MonoBehaviour {
     //pickup point and set RedSphere to inactive
     IEnumerator PickupPoint()
     {
-        print("pickup red point");
+        
         RedSphere.SetActive(false);
+        print("Nope, they all reset your score. Too bad.");
         yield return null;
-    }
+    }   
 }

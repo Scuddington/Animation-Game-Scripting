@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/LastTwoAssignments.unity
+- path: Assets/Scenes/Homewerks/MyDelegates/LastTwoAssignments.unity
   isLoaded: 1
   isActive: 1
